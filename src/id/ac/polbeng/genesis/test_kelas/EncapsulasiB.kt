@@ -1,12 +1,12 @@
-package id.ac.polbeng.depandi.test_kelas
+package id.ac.polbeng.genesis.test_kelas
 
-class EmployeeA(_id: Int, _name: String, _age: Int) {
+class EmployeeB(_id: Int, _name: String, _age: Int) {
     val id: Int = _id
         get() = field
 
     var name: String = _name
         get() {
-            return field.uppercase()   // pakai uppercase() (toUpperCase() sudah deprecated di Kotlin baru)
+            return field.uppercase()   // otomatis jadi huruf besar
         }
         set(value) {
             field = value
@@ -21,7 +21,7 @@ class EmployeeA(_id: Int, _name: String, _age: Int) {
 }
 
 fun main() {
-    val emp = EmployeeA(1101, "Jono", 25)
+    val emp = EmployeeB(1102, "Budi", 30)
     println("Id : ${emp.id}, Nama : ${emp.name}, Umur : ${emp.age}")
-    emp.age = -1   // baris ini akan memicu exception
+    emp.age = -1   // ini akan memicu exception
 }

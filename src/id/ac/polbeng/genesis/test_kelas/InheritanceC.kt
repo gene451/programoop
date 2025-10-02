@@ -1,4 +1,4 @@
-package id.ac.polbeng.depandi.test_kelas
+package id.ac.polbeng.genesis.test_kelas
 open class Teacher {
     // Must use "open" modifier to allow child classes to override it
     open fun teach() {

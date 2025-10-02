@@ -1,4 +1,4 @@
-package id.ac.polbeng.depandi.test_kelas
+package id.ac.polbeng.genesis.test_kelas
 // Parent class
 open class Computer(val name: String,
                     val brand: String) {

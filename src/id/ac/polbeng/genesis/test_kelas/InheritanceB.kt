@@ -1,4 +1,4 @@
-package id.ac.polbeng.depandi.test_kelas
+package id.ac.polbeng.genesis.test_kelas
 // Child class (initializes the parent class)
 class LaptopB : Computer{
     val batteryLife: Double

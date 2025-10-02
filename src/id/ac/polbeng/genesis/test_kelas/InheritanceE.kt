@@ -1,4 +1,4 @@
-package id.ac.polbeng.depandi.test_kelas
+package id.ac.polbeng.genesis.test_kelas
 open class NewPerson {
     open var age: Int = 1
 }

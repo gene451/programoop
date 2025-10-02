@@ -1,4 +1,4 @@
-package id.ac.polbeng.depandi.test_kelas
+package id.ac.polbeng.genesis.test_kelas
 open class Rectangle {
     open fun draw() {
         println("From Base Class Rectangle")

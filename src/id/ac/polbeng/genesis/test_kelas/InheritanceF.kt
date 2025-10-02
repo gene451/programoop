@@ -1,4 +1,4 @@
-package id.ac.polbeng.depandi.test_kelas
+package id.ac.polbeng.genesis.test_kelas
 open class EmployeeF {
     open val baseSalary: Double = 10000.0
     open fun displayDetails() {
