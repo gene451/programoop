@@ -1,13 +1,11 @@
 package id.ac.polbeng.genesis.test_kelas
 
-class EmployeeB(_id: Int, _name: String, _age: Int) {
+class EmployeeC(_id: Int, _name: String, _age: Int) {
     val id: Int = _id
-        get() = field
+        get() = field  // Getter default
 
     var name: String = _name
-        get() {
-            return field.uppercase()   // otomatis jadi huruf besar
-        }
+        get() = field.uppercase()  // Otomatis huruf besar
         set(value) {
             field = value
         }
@@ -21,7 +19,17 @@ class EmployeeB(_id: Int, _name: String, _age: Int) {
 }
 
 fun main() {
-    val emp = EmployeeB(1102, "Budi", 30)
+    val emp = EmployeeC(1102, "Budi", 30)
     println("Id : ${emp.id}, Nama : ${emp.name}, Umur : ${emp.age}")
-    emp.age = -1   // ini akan memicu exception
+
+    // Contoh valid setter
+    emp.age = 35
+    println("Umur baru : ${emp.age}")
+
+    // Contoh invalid setter → memicu exception
+    try {
+        emp.age = -1
+    } catch (e: IllegalArgumentException) {
+        println("Error: ${e.message}")
+    }
 }
