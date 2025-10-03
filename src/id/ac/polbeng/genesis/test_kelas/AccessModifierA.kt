@@ -1,31 +1,72 @@
 package id.ac.polbeng.genesis.test_kelas
+abstract class Vehicle(val name: String,
+                       val color: String,
+                       val weight: Double) {   // Concrete (Non Abstract) Properties
 
-open class Mahasiswa(var nama: String, var nrp: Int){
-    open fun info() {
-        println(nama +'\n'+ nrp);
-    }
-    fun toString(): String {
-        return "Mahasiswa{nama= $nama, nrp= $nrp}"
+    // Abstract Property (Must be overridden by Subclasses)
+    abstract var maxSpeed: Double
+
+    // Abstract Methods (Must be implemented by Subclasses)
+    abstract fun start()
+    abstract fun stop()
+    abstract fun sound()
+
+    // Concrete (Non Abstract) Method
+    fun displayDetails() {
+        println("Name: $name, Color: $color, Weight: $weight, Max Speed: $maxSpeed")
     }
 }
-class KetuaHima(nama: String, nrp: Int, val jurusan: String) : Mahasiswa(nama, nrp) {
-    @Override
-    override fun info(){
-        println(nama +'\n'+ nrp +'\n'+ jurusan);
+
+class Car(name: String,
+          color: String,
+          weight: Double,
+          override var maxSpeed: Double): Vehicle(name, color, weight) {
+
+    override fun start() {
+        // Code to start a Car
+        println("Car Started")
+    }
+
+    override fun stop() {
+        // Code to stop a Car
+        println("Car Stopped")
+    }
+
+    override fun sound() {
+        // Code sound of a Car
+        println("Brum...brum...brumm!")
     }
 }
-fun main(){
-    val budi = Mahasiswa("Budi Gunawan", 1106123)
-    val anton = KetuaHima("Anton", 1106789, "Teknik Informatika")
-    println(anton.toString());
-    println()
-    anton.info()
-    println("Jenis Kelas = " + anton.javaClass.simpleName)
-    println()
-    budi.info()
-    println("Jenis Kelas = " + budi.javaClass.simpleName)
-    val ucok = KetuaHima("Ucok", 1105239, "Teknik Elektro")
-    println()
-    ucok.info()
-    println("Jenis Kelas = " + ucok.javaClass.simpleName)
+
+class Motorcycle(name: String,
+                 color: String,
+                 weight: Double,
+                 override var maxSpeed: Double): Vehicle(name, color, weight) {
+
+    override fun start() {
+        // Code to Start the Motorcycle
+        println("Bike Started")
+    }
+
+    override fun stop() {
+        // Code to Stop the Motorcycle
+        println("Bike Stopped")
+    }
+
+    override fun sound() {
+        // Code sound of a Car
+        println("Preng...preng...preng!")
+    }
+}
+fun main() {
+    val car = Car("Ferrari 812 Superfast", "red", 1525.0, 339.60)
+    val motorCycle = Motorcycle("Ducati 1098s", "red", 173.0, 271.0)
+    car.displayDetails()
+    motorCycle.displayDetails()
+    car.start()
+    car.sound()
+    car.stop()
+    motorCycle.start()
+    motorCycle.sound()
+    motorCycle.stop()
 }
